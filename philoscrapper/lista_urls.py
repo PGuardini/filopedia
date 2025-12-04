@@ -1,53 +1,59 @@
 import json
 import re
 
-def lista_urls() -> list:
-    """Retorna a lista de urls do arquivo JSON extraído pela aranha mapeadora"""
+class Listagem:
 
-    with open('urls.json', 'r+', encoding="utf-8") as urls:
-        urls = json.load(urls)
+    def __init__(self):
+        self._lista_titulos = self.lista_titulos()
+        self._lista_filosofos = self.lista_filosofos(self._lista_titulos)
+        self._lista_url_artigos = self.lista_urls_filosofos(self._lista_filosofos)
 
-    lista_urls = [dict(url)['url'] for url in urls]
 
-    return lista_urls
+    def lista_urls(self) -> list:
+        """Retorna a lista de urls do arquivo JSON extraído pela aranha mapeadora"""
 
-def lista_titulos() -> list:
-    """Retorna a lista de titulos do arquivo JSON"""
-    with open('urls.json', 'r+', encoding="utf-8") as titulos:
-        titulos = json.load(titulos)
+        with open('urls.json', 'r+', encoding="utf-8") as urls:
+            urls = json.load(urls)
 
-    lista_titulos = [dict(titulo)['titulo'] for titulo in titulos]
+        lista_urls = [dict(url)['url'] for url in urls]
 
-    return lista_titulos
+        return lista_urls
 
-def lista_filosofos(lista_titulos) -> list:
-    """Retorna uma lista com os nomes de todos os filósofos"""
+    def lista_titulos(self) -> list:
+        """Retorna a lista de titulos do arquivo JSON"""
+        
+        with open('urls.json', 'r+', encoding="utf-8") as titulos:
+            titulos = json.load(titulos)
 
-    lista_filosofos = []
+        lista_titulos = [dict(titulo)['titulo'] for titulo in titulos]
 
-    for titulo in titulos:
-        #nomes_simples = re.search(r"\w[a-z]{1,}", titulo)
-        nomes_romanizados = re.match(r"((^[A-Z][a-z]+, )(\w+[ .]?)+)", titulo)
-        nomes_arabes_al = re.match(r"(^al-\w+)", titulo)
-        nomes_arabes_ibn = re.match(r"(^Ibn \w+(\[\w+\])?)", titulo)
-        nomes_sem_separacao = re.match(r"((^[A-Z][a-z]+ )(\w+ ?)+)", titulo)
+        return lista_titulos
 
-        if nomes_romanizados or nomes_arabes_al or nomes_arabes_ibn or nomes_sem_separacao:
-            lista_filosofos.append(titulo)
+    def lista_filosofos(self, lista_titulos) -> list:
+        """Retorna uma lista com os nomes de todos os filósofos"""
 
-    return lista_filosofos
+        lista_filosofos = []
 
-def urls_filosofos(lista_filosofos) -> list:
-    """Retorna uma lista com as urls de pagina da wikipedia dos filosofos"""
+        for titulo in lista_titulos:
+            #nomes_simples = re.search(r"\w[a-z]{1,}", titulo)
+            nomes_romanizados = re.match(r"((^[A-Z][a-z]+, )(\w+[ .]?)+)", titulo)
+            nomes_arabes_al = re.match(r"(^al-\w+)", titulo)
+            nomes_arabes_ibn = re.match(r"(^Ibn \w+(\[\w+\])?)", titulo)
+            nomes_sem_separacao = re.match(r"((^[A-Z][a-z]+ )(\w+ ?)+)", titulo)
 
-    urls_filosofos = [f"https://pt.wikipedia.org/wiki/{filosofo}" for filosofo in lista_filosofos]
+            if nomes_romanizados or nomes_arabes_al or nomes_arabes_ibn or nomes_sem_separacao:
+                lista_filosofos.append(titulo)
 
-    return urls_filosofos
+        return lista_filosofos
 
-#urls = lista_urls()
-titulos = lista_titulos()
-#nomes = lista_filosofos(lista_titulos())
-#print(len(titulos))
-#print(len(nomes))
+    def lista_urls_filosofos(self, lista_filosofos) -> list:
+        """Retorna uma lista com as urls de pagina da wikipedia dos filosofos"""
 
-urls = urls_filosofos(lista_filosofos(titulos))
+        urls_filosofos = [f"https://pt.wikipedia.org/wiki/{filosofo}" for filosofo in lista_filosofos]
+
+        return urls_filosofos
+
+
+    @property
+    def lista_url_artigos(self):
+        return self._lista_url_artigos
