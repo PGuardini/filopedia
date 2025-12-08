@@ -1,13 +1,11 @@
 from pathlib import Path
 import scrapy
-from lista_urls import Listagem
 
 class WikipediaSpider(scrapy.Spider):
     name = "wikipedia"
     allowed_domains = ["pt.wikipedia.org"]
     
-    lista_urls = Listagem()
-    start_urls = lista_urls.lista_url_artigos
+    start_urls = []
 
     def parse(self, response):
         page = response.url.split("/")[-2]

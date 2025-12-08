@@ -1,12 +1,10 @@
 from pathlib import Path
 import scrapy
-from lista_urls import Listagem
 
 class SepSpider(scrapy.Spider):
     name = "sep"
     allowed_domains = ["plato.stanford.edu"]
-    lista_urls = Listagem()
-    start_urls = lista_urls.lista_url_artigos
+    start_urls = []
 
     def parse(self, response):
         page = response.url.split("/")[-2]
