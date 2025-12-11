@@ -24,7 +24,7 @@ ROBOTSTXT_OBEY = True
 # Concurrency and throttling settings
 #CONCURRENT_REQUESTS = 16
 CONCURRENT_REQUESTS_PER_DOMAIN = 1
-DOWNLOAD_DELAY = 2
+DOWNLOAD_DELAY = 3
 
 # Disable cookies (enabled by default)
 #COOKIES_ENABLED = False
@@ -40,9 +40,12 @@ DOWNLOAD_DELAY = 2
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    "scrapers.middlewares.scrapersSpiderMiddleware": 543,
-#}
+SPIDER_MIDDLEWARES = {
+    #"scrapers.middlewares.scrapersSpiderMiddleware": 543,
+    "scrapy.spidermiddlewares.httperror.HttpErrorMiddleware": 500
+}
+
+HTTPERROR_ALLOWED_CODES = [404]
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
