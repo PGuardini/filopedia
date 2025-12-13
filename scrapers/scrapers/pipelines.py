@@ -1,6 +1,8 @@
 from scrapy.exceptions import DropItem
 import re
 import json
+from datetime import datetime
+import w3lib.html
 
 class MapeadoraPipeline:
     def open_spider(self, spider):
@@ -76,5 +78,51 @@ class MapeadoraPipeline:
         self.arquivo.close()
 
 class WikipediaPipeline:
+    """
+        A aranha wikipedia retém alguns itens no seu processo de
+        raspagem: url, codigo_http, título, conteúdo, ligações
+        externas, categorias e imagem da página que ela raspou.
+
+        É feita a limpeza das tags HTML do conteúdo, para retermos
+        somente o texto do artigo, possibilitando a formatação para
+        o portal. Retemos também os links das categorias para traba-
+        lharmos futuramente com eles.
+
+        Após a limpeza, os dados são salvos em arquivos .json com
+        seus correspondentes nomes. Caso a página gere o erro 404,
+        o arquivo recebe o nome 404_[nome_da_página], para facilitar
+        o mapeamento de quais links não possuem tradução para o por-
+        tuguês ou que não existem.
+
+        Os dados são salvos em arquivos .json para facilitar a sua
+        futura consulta através do backend em Django.
+    """
+
     def process_item(self, item, spider):
+        
+        conteudo_limpo = [w3lib.html.remove_tags(str(textos)) for textos in item['conteudo']]
+        categorias_limpas = w3lib.html.remove_tags(str(item['categorias']), keep=("a",))
+        dados = {
+            'url': item['url'],
+            'codigo_http': item['codigo_http'],
+            'titulo': item['titulo'],
+            'conteudo': conteudo_limpo,
+            'ligacoes': item['ligacoes'],
+            'categorias': categorias_limpas,
+            'imagem': item['imagem'] 
+        }
+        
+        nome_arquivo = str(item['titulo']).replace(" ","_")
+        substituicoes_nome_arquivo = ["[", "]", "'"]
+
+        for substituicao in substituicoes_nome_arquivo:
+            nome_arquivo = nome_arquivo.replace(substituicao, "")
+        
+        if item['codigo_http'] != 200:
+            nome_arquivo = str(item['codigo_http']) + "_" + item['url'].split("/")[-1]
+
+        with open(f"scrapers/arquivos_brutos/{nome_arquivo}.json", "w+", encoding="utf-8") as f:
+            dados_convertidos = json.dumps(dados, ensure_ascii=False, indent=4)
+            f.write(dados_convertidos)
+
         return item

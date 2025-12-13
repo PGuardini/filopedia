@@ -4,6 +4,13 @@ from scrapers.items import WikipediaItem
 import json
 
 class WikipediaSpider(scrapy.Spider):
+    """
+        Aranha que extrai os dados da Wikipedia, percorrendo todos os
+        links coletados pela aranha mapeadora.
+
+    """
+
+
     name = "wikipedia"
     allowed_domains = ["pt.wikipedia.org"]
 
@@ -12,6 +19,8 @@ class WikipediaSpider(scrapy.Spider):
             "scrapers.pipelines.WikipediaPipeline": 300
         }
     }
+
+
     
     with open("urls.json", "r", encoding="utf-8") as arquivo:
         lista_urls = json.load(arquivo)
@@ -24,6 +33,7 @@ class WikipediaSpider(scrapy.Spider):
         item = WikipediaItem()
 
         item['url'] = response.url
+        item['codigo_http'] = response.status
         item['titulo'] = response.css("h1#firstHeading > span.mw-page-title-main::text").getall()
         item['conteudo'] = response.css("div.mw-parser-output > p").getall()
         item['ligacoes'] = response.css("div.mw-parser-output > ul").getall()

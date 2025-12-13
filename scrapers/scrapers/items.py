@@ -14,6 +14,7 @@ class ScrapersItem(scrapy.Item):
 
 class WikipediaItem(scrapy.Item):
     url = scrapy.Field()
+    codigo_http = scrapy.Field()
     titulo = scrapy.Field()
     conteudo = scrapy.Field()
     ligacoes = scrapy.Field()
