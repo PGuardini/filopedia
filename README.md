@@ -11,6 +11,7 @@ Este projeto é tem como objetivo a divulgação de conteúdo filosófico por me
   - [Sobre o projeto](#sobre-o-projeto)
   - [Estrutura do projeto](#estrutura-do-projeto)
 - [Instalação do projeto](#instalação-do-projeto)
+  - [Instalando com Docker](#instalando-com-docker)
 - [Utilização](#utilização)
 - [Dúvidas? Ideias?](#dúvidas-ideias)
 - [Contribuição](#contribuição)
@@ -26,6 +27,20 @@ Entendemos a dificuldade para manter o rigor em relação ao conteúdo extraído
 ## Estrutura do projeto
 
 # Instalação do projeto
+
+## Instalando com Docker
+
+Você pode usar o arquivo `compose.yaml` para iniciar um container com todas as dependências necessárias
+
+      docker compose -f compose.yaml up -d
+
+O container já estará rodando a aplicação Django na porta local 8000. Para acessá-la, basta acessar no seu navegador `localhost:8000`
+
+
+Os comandos a seguir devem ser rodados dentro do container
+Use `docker exec` para abrir um terminal dentro do container
+    
+    docker exec -it filopedia-django bash
 
 # Utilização
 
