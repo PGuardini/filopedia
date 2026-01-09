@@ -1,8 +1,8 @@
 from pathlib import Path
 import scrapy
-from ..items import WikipediaItem
+from scrapers.items import WikipediaItem
 import json
-from crawler.constants import URLS_PATH
+from constants import URLS_PATH
 
 class WikipediaSpider(scrapy.Spider):
     """

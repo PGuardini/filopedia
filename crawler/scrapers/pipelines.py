@@ -3,7 +3,7 @@ import re
 import json
 from datetime import datetime
 import w3lib.html
-from crawler.constants import DATA_PATH, URLS_PATH
+from constants import DATA_PATH, URLS_PATH
 
 class MapeadoraPipeline:
     def open_spider(self, spider):

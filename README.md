@@ -26,6 +26,17 @@ Entendemos a dificuldade para manter o rigor em relação ao conteúdo extraído
 
 ## Estrutura do projeto
 
+O projeto está dividido em três partes:
+- Crawler - sendo `crawler` o diretório correspondente
+- Camada de persistência - sendo `data` o diretório correspondente
+- Projeto Django - sendo `filopedi` o diretório correspondente
+
+O Crawler é o motor de extração dos dados que serão consumidos pelo projeto Django. Ele utiliza como biblioteca principal o Scrapy, que extrai através das aranhas (spiders) os dados sobre filosofia.
+
+Os dados extraídos pelo Crawler são armazenados na camada de persistência, isto é, no diretório `/data`
+
+Após serem salvos na camada de persistência, a aplicação Django os consome para gerar os cards.
+
 # Instalação do projeto
 
 ## Instalando com Docker
@@ -40,11 +51,18 @@ O container já estará rodando a aplicação Django na porta local 8000. Para a
 Os comandos a seguir devem ser rodados dentro do container
 Use `docker exec` para abrir um terminal dentro do container
     
-    docker exec -it filopedia-django bash
+    docker exec -it filopedia bash
 
-    docker run -p 8000:8000 -d filopedia-django 
+    docker run -p 8000:8000 -d filopedia
 
 # Utilização
+
+Rodando o crawler:
+
+  No terminal, rode na pasta `crawler` o comando:
+    `scrapy crawl wikipedia`
+
+  A aranha wikipedia irá iniciar e começará a criar arquivos .json na pasta `data`
 
 # Dúvidas? Ideias?
 

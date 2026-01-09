@@ -1,0 +1,4 @@
+*.pyc
+data/*.json
+.mypy_cache
+.vscode
