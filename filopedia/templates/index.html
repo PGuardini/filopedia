@@ -17,8 +17,14 @@
         {{ arquivo }}
     </div>
 
+    <h1>{{ json.titulo }}</h1>
+    <img src="{{ json.imagem }}">
 
+    {% for chave, conteudo in json.items %}
+        {% if chave != "imagem" %}
+            {{ conteudo }}
+        {% endif %}
 
-
+    {% endfor %}
 </body>
 </html>
