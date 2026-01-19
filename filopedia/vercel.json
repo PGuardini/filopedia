@@ -9,7 +9,7 @@
         "runtime": "Python3.13"
       }
     }],
-  "routes": [
+  "routes":[
     {
       "src": "/(.*)",
       "dest": "setup/wsgi.py"
