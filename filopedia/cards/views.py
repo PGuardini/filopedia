@@ -25,7 +25,7 @@ def index(request):
 
 
 def card(request, filosofo):
-    filosofo = filosofo.replace(" ", "_")
+    filosofo = filosofo.replace(" ", "_").lower()
     card_filosofo = get_philosopher(filosofo)
 
     return render(request, "card.html", card_filosofo)

@@ -4,6 +4,7 @@ import json
 from datetime import datetime
 import w3lib.html
 from constants import DATA_PATH, URLS_PATH
+import unicodedata
 
 class MapeadoraPipeline:
     def open_spider(self, spider):
@@ -110,17 +111,26 @@ class WikipediaPipeline:
             'conteudo': conteudo_limpo,
             'ligacoes': item['ligacoes'],
             'categorias': categorias_limpas,
-            'imagem': item['imagem'] 
+            'imagem': item['imagem']
         }
         
-        nome_arquivo = str(item['titulo']).replace(" ","_")
-        substituicoes_nome_arquivo = ["[", "]", "'"]
+        nome_arquivo = str(item['titulo']).lower().replace(" ","_")
+        if "-" in nome_arquivo:
+            nome_arquivo = nome_arquivo.replace("-", "_")
+
+        substituicoes_nome_arquivo = ["[", "]", "'","."]
 
         for substituicao in substituicoes_nome_arquivo:
             nome_arquivo = nome_arquivo.replace(substituicao, "")
         
         if item['codigo_http'] != 200:
             nome_arquivo = str(item['codigo_http']) + "_" + item['url'].split("/")[-1]
+
+        # normaliza nome do arquivo para retirar acentuação
+        nome_arquivo = unicodedata.normalize('NFD', nome_arquivo).encode('ascii', 'ignore').decode('utf-8')
+
+        # adiciona a url para view do filosofo
+        dados['view'] = nome_arquivo
 
         with open(f"{DATA_PATH}{nome_arquivo}.json", "w+", encoding="utf-8") as f:
             dados_convertidos = json.dumps(dados, ensure_ascii=False, indent=4)

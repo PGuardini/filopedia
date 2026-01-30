@@ -52,7 +52,7 @@
             <div class="cards">
                 <img src="{{ card.imagem }}">
                 <h1>
-                    <a href="{% url 'card' card.titulo.0 %}">
+                    <a href="{% url 'card' card.view %}">
                         {{ card.titulo.0 }}
                     </a>
                 </h1>
@@ -69,7 +69,7 @@
                     {% endif %}
                 {% endfor %}
                 <p>
-                    <a href="{% url 'card' card.titulo.0 %}">Ler mais</a>
+                    <a href="{% url 'card' card.view %}">Ler mais</a>
                 </p>
             </div>
         {% endfor %}
