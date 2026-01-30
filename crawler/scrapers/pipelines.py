@@ -1,7 +1,6 @@
 from scrapy.exceptions import DropItem
 import re
 import json
-from datetime import datetime
 import w3lib.html
 from constants import DATA_PATH, URLS_PATH
 
@@ -17,7 +16,7 @@ class MapeadoraPipeline:
         try:
             self.arquivo = open(URLS_PATH, "w+", encoding="utf-8")
             self.lista_urls = json.load(self.arquivo)
-        except:
+        except Exception:
             self.lista_urls = []
 
     def process_item(self, item, spider):

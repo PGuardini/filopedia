@@ -5,9 +5,6 @@
 
 from scrapy import signals
 
-# useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
-
 
 class ScrapersSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
