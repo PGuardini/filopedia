@@ -15,4 +15,5 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'setup.settings')
 
 application = get_wsgi_application()
 
+# para ser possível o vercel ler a aplicação
 app = application

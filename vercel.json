@@ -1,14 +1,15 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "setup/wsgi.py",
+      "src": "filopedia/setup/wsgi.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "setup/wsgi.py"
+      "dest": "filopedia/setup/wsgi.py"
     }
   ]
 }
