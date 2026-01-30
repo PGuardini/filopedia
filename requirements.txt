@@ -66,7 +66,7 @@ incremental==24.11.0
     # via
     #   -r requirements.in
     #   twisted
-itemadapter==0.12.2
+itemadapter==0.13.1
     # via
     #   -r requirements.in
     #   itemloaders
@@ -135,7 +135,7 @@ requests-file==3.0.1
     # via
     #   -r requirements.in
     #   tldextract
-scrapy==2.13.4
+scrapy==2.14.1
     # via -r requirements.in
 service-identity==24.2.0
     # via
