@@ -5,176 +5,112 @@
 #    pip-compile requirements.in
 #
 asgiref==3.11.0
-    # via
-    #   -r requirements.in
-    #   django
+    # via django
 attrs==25.4.0
     # via
-    #   -r requirements.in
     #   service-identity
     #   twisted
 automat==25.4.16
-    # via
-    #   -r requirements.in
-    #   twisted
-certifi==2025.11.12
-    # via
-    #   -r requirements.in
-    #   requests
+    # via twisted
+certifi==2026.1.4
+    # via requests
 cffi==2.0.0
-    # via
-    #   -r requirements.in
-    #   cryptography
+    # via cryptography
 constantly==23.10.4
+    # via twisted
+cryptography==46.0.4
     # via
-    #   -r requirements.in
-    #   twisted
-cryptography==46.0.3
-    # via
-    #   -r requirements.in
     #   pyopenssl
     #   scrapy
     #   service-identity
-cssselect==1.3.0
+cssselect==1.4.0
     # via
-    #   -r requirements.in
     #   parsel
     #   scrapy
 defusedxml==0.7.1
-    # via
-    #   -r requirements.in
-    #   scrapy
+    # via scrapy
 django==6.0
     # via -r requirements.in
 filelock==3.20.3
-    # via
-    #   -r requirements.in
-    #   tldextract
+    # via tldextract
 gunicorn==23.0.0
     # via -r requirements.in
 hyperlink==21.0.0
-    # via
-    #   -r requirements.in
-    #   twisted
+    # via twisted
 idna==3.11
     # via
-    #   -r requirements.in
     #   hyperlink
     #   requests
     #   tldextract
 incremental==24.11.0
-    # via
-    #   -r requirements.in
-    #   twisted
+    # via twisted
 itemadapter==0.13.1
     # via
-    #   -r requirements.in
     #   itemloaders
     #   scrapy
-itemloaders==1.3.2
+itemloaders==1.4.0
+    # via scrapy
+jmespath==1.1.0
     # via
-    #   -r requirements.in
-    #   scrapy
-jmespath==1.0.1
-    # via
-    #   -r requirements.in
     #   itemloaders
     #   parsel
 lxml==6.0.2
     # via
-    #   -r requirements.in
     #   parsel
     #   scrapy
-packaging==25.0
+packaging==26.0
     # via
-    #   -r requirements.in
     #   gunicorn
     #   incremental
     #   parsel
     #   scrapy
-parsel==1.10.0
+parsel==1.11.0
     # via
-    #   -r requirements.in
     #   itemloaders
     #   scrapy
-protego==0.5.0
-    # via
-    #   -r requirements.in
-    #   scrapy
+protego==0.6.0
+    # via scrapy
 pyasn1==0.6.2
     # via
-    #   -r requirements.in
     #   pyasn1-modules
     #   service-identity
 pyasn1-modules==0.4.2
-    # via
-    #   -r requirements.in
-    #   service-identity
-pycparser==2.23
-    # via
-    #   -r requirements.in
-    #   cffi
+    # via service-identity
+pycparser==3.0
+    # via cffi
 pydispatcher==2.0.7
-    # via
-    #   -r requirements.in
-    #   scrapy
+    # via scrapy
 pyopenssl==25.3.0
-    # via
-    #   -r requirements.in
-    #   scrapy
-queuelib==1.8.0
-    # via
-    #   -r requirements.in
-    #   scrapy
+    # via scrapy
+queuelib==1.9.0
+    # via scrapy
 requests==2.32.5
     # via
-    #   -r requirements.in
     #   requests-file
     #   tldextract
 requests-file==3.0.1
-    # via
-    #   -r requirements.in
-    #   tldextract
+    # via tldextract
 scrapy==2.14.1
     # via -r requirements.in
 service-identity==24.2.0
-    # via
-    #   -r requirements.in
-    #   scrapy
-sqlparse==0.5.4
-    # via
-    #   -r requirements.in
-    #   django
-tldextract==5.3.0
-    # via
-    #   -r requirements.in
-    #   scrapy
+    # via scrapy
+sqlparse==0.5.5
+    # via django
+tldextract==5.3.1
+    # via scrapy
 twisted==25.5.0
-    # via
-    #   -r requirements.in
-    #   scrapy
+    # via scrapy
 typing-extensions==4.15.0
-    # via
-    #   -r requirements.in
-    #   twisted
+    # via twisted
 tzdata==2025.3
-    # via
-    #   -r requirements.in
-    #   django
+    # via django
 urllib3==2.6.3
+    # via requests
+w3lib==2.4.0
     # via
-    #   -r requirements.in
-    #   requests
-w3lib==2.3.1
-    # via
-    #   -r requirements.in
     #   parsel
     #   scrapy
-zope-interface==8.1.1
+zope-interface==8.2
     # via
-    #   -r requirements.in
     #   scrapy
     #   twisted
-
-# The following packages are considered to be unsafe in a requirements file:
-# setuptools
