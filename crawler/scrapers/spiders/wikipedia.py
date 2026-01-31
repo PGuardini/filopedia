@@ -1,4 +1,3 @@
-from pathlib import Path
 import scrapy
 from scrapers.items import WikipediaItem
 import json
