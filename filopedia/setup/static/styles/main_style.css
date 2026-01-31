@@ -128,3 +128,65 @@ body {
     display: inline-block;
     margin-bottom: 1.5rem;
 }
+
+.about-section {
+    background-color: #F5F1E9; /* Fundo papiro */
+    padding: 4rem 0;
+}
+
+.about-card {
+    background-color: #FFFFFF;
+    border: 1px solid #D7CCC8;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.about-header {
+    font-family: 'Georgia', serif;
+    color: #2C3E50;
+    border-bottom: 2px solid #4A5D4E;
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-variant: small-caps;
+}
+
+.about-text {
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #333;
+    text-align: justify;
+}
+
+.quote-box {
+    border-left: 4px solid #4A5D4E;
+    padding-left: 1.5rem;
+    margin: 2.5rem 0;
+    font-style: italic;
+    color: #4A5D4E;
+    font-size: 1.2rem;
+}
+
+.about-img-container {
+    position: relative;
+    padding: 1rem;
+}
+
+.about-img-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #D7CCC8;
+    transform: translate(10px, 10px);
+    z-index: 0;
+}
+
+.about-img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    filter: sepia(30%); /* Toque vintage na foto */
+}

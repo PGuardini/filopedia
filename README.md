@@ -5,7 +5,7 @@
 
 # Introdução
 
-Este projeto é tem como objetivo a divulgação de conteúdo filosófico por meio de camadas de aprofundamento. Temos como objetivo a difusão de história da filosofia, da história das filósofas e dos filósofos e de conceitos filosóficos, possuindo como pilar norteador o livre fluxo do conhecimento ao lado do rigor filosófico.
+Este projeto tem como objetivo a divulgação de conteúdo filosófico por meio de camadas de aprofundamento. Temos como objetivo a difusão de história da filosofia, da história das filósofas e dos filósofos e de conceitos filosóficos, possuindo como pilar norteador o livre fluxo do conhecimento ao lado do rigor filosófico.
 
 - [Introdução](#introdução)
   - [Sobre o projeto](#sobre-o-projeto)

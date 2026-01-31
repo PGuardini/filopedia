@@ -29,3 +29,6 @@ def card(request, filosofo):
     card_filosofo = get_philosopher(filosofo)
 
     return render(request, "cards/card.html", card_filosofo)
+
+def sobre(request):
+    return render(request, "filopedia/sobre.html")

@@ -1,0 +1,120 @@
+{% extends 'cards/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="about-section">
+        <div class="container">
+            <div class="about-card">
+                <div class="row align-items-center">
+                    
+                    <div class="col-lg-7">
+                        <h1 class="about-header">Sobre o projeto Filopedia</h1>
+                        <div class="about-text">
+                            <section>
+                                <h3>Objetivos</h3>
+                                <p>
+                                    Este projeto nasceu de um desejo de democratizar conhecimento filosófico sem perder o rigor que este demanda.
+                                    O objetivo principal é a difusão de história da filosofia, da história das filósofas e dos filósofos e de
+                                    conceitos filosóficos. Definimos que o valor que nos guia no desenvolvimento deste projeto é o livre fluxo
+                                    do conhecimento caminhando junto com o rigor filosófico.
+                                </p>
+                            </section>
+                            <section>
+                                <h3>Metodologia</h3>
+                                <p>
+                                    A metodologia que estamos tentando aplicar é o que chamamos de "camadas de aprofundamento".
+                                    Em cada camada o usuário encontrará um maior aprofundamento em relação ao conteúdo que está
+                                    em contato.
+                                </p>
+                                <subsection>
+                                    <h5>Camadas</h5>
+                                    <ol>
+                                        <li>Cards</li>
+                                        <li>Página de biografia</li>
+                                        <li>Relações</li>
+                                        <li>Bibliografia</li>
+                                        <li>Estado da arte</li>
+                                    </ol>
+                                </subsection>
+                                <subsection>
+                                    <h5>Por que esta metodologia?</h5>
+                                    <p>
+                                        Apesar de sermos críticos à forma de contato com conteúdo digitais que surgiu
+                                        com o advento e expansão das redes sociais — <b>o consumo de conteúdo</b> —, não ignoramos o fato de
+                                        esta forma ter moldado e estar moldando a sensibilidade em relação a conteúdo digitais. É incontornável
+                                        a forma como as redes sociais popularizaram uma forma de consumo extremamente eficaz e que degrada
+                                        o conteúdo que é envolvido por esta forma na internet. Tornaram as informações nos meios digitais um <i>fast-food</i>.
+                                        Não estamos tentando condenar moralmente nada e ninguém, mas acreditamos que é importante manter isto presente,
+                                        pois nos ajuda a entender como nos relacionamos esteticamente com os conteúdos digitais.
+                                        Há um novo tipo de sensibilidade e esta pede uma forma específica de contato.
+                                    </p>
+                                    <p>
+                                        Como não temos como desativar esse tipo de sensibilidade do nada, decidimos que uma forma de subverter
+                                        esta forma é utilizá-la em um primeiro momento. Pensamos em camadas para possibilitar uma progressão
+                                        crítica sobre a filosofia e sobre o mundo que nos rodeia. Definimos a porta de entrada para este
+                                        projeto o formato de cards diários, pois aparenta ser uma boa forma de atrair pessoas que não são da área, 
+                                        mas que possuem interesse.
+                                    </p>
+                                    <p>
+                                        A partir dos cards, são disponibilizados meios para um aprofundamento maior e mais crítico.
+                                        Pensamos como passo posterior a apresentação da biografia das filósofas e dos filósofos, para
+                                        induzir um maior contato com tais histórias, intencionando maior intimidade com a história
+                                        da filosofia. Após a biografia, buscamos desenvolver formas de apresentar conceitos e ideias
+                                        destes mesmos e buscando relações e conexões com outros pensadores, ideias etc.
+                                    </p>
+                                    <p>
+                                        Para um nível mais aprofundado, buscamos disponibilizar também bibliografias de qualidade para
+                                        um maior rigor. Por fim, nosso objetivo em relação ao conhecimento filosófico é estar vinculando
+                                        os temas, filósofas e filósofos, ideias, conceitos, problemas aqui apresentados com revistas 
+                                        brasileiras de pesquisa em filosofia.
+                                    </p>
+                                </subsection>
+                            </section>
+                            <section>
+                            </section>
+                            <section>
+                                <div class="quote-box">
+                                    "A vida não examinada não vale a pena ser vivida." <br>
+                                    <small>— Sócrates</small>
+                                </div>
+                            </section>
+                            <section>
+                                <p>
+                                    Como o conteúdo dos cards e das biografias tem como referência principal artigos da Wikipedia,
+                                    pedimos e encorajamos quem é da área de filosofia revisar, criar e editar tais artigos,
+                                    tendo em vista uma maior qualificação.
+                                </p>
+                                <p>
+                                    Como forma de contribuir para além da Wikipedia, temos o repositório no github para desenvoledores
+                                    que pode ser acessado <a href="github.com/PGuardini/filopedia">por aqui</a>.
+                                </p>
+                                <p>Possui sugestões, críticas, encontrou algum erro?</p>
+                                <p>Entre em contato:</p>
+                                <ul>
+                                    <li>
+                                        E-mail: <a href="mailto:pguardini.trabalho@gmail.com">pguardini.trabalho@gmail.com</a>
+                                    </li>
+                                    <li>
+                                        Instagram: <a href="instagram.com/pedro_gabiatti/">instagram.com/pedro_gabiatti/</a>
+                                    </li>
+                                    <li>
+                                        LinkedIn: <a href="linkedin.com/in/pedroguardini">linkedin.com/in/pedroguardini</a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 mt-5 mt-lg-0">
+                        <div class="about-img-container">
+                            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                                class="about-img shadow" alt="Biblioteca Antiga">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
