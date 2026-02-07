@@ -21,6 +21,8 @@ Este projeto tem como objetivo a divulgação de conteúdo filosófico por meio 
     - [Aranha mapeadora](#aranha-mapeadora)
     - [Aranha Wikipedia](#aranha-wikipedia)
   - [Rodando a aplicação Django:](#rodando-a-aplicação-django)
+    - [Observações importantes sobre o projeto Django](#observações-importantes-sobre-o-projeto-django)
+      - [Sobre o ambiente Django:](#sobre-o-ambiente-django)
 - [Dúvidas? Ideias?](#dúvidas-ideias)
   - [Contatos](#contatos)
 - [Contribuição](#contribuição)
@@ -174,6 +176,42 @@ Caso esteja usando UV (não precisa ativar a venv):
 Obs.: se estiver executando na raiz do projeto, o caminho se torna `filopedia/manage.py`
 
 Agora é para o servidor Django estar rodando em <http://localhost:8000> no seu navegador.
+
+### Observações importantes sobre o projeto Django
+
+#### Sobre o ambiente Django:
+
+- É necessário criar um arquivo chamado .env dentro da pasta `filopedia/`.
+- Dentro do arquivo deve ser criada uma variável chamada SECRET_KEY, como mostrado abaixo:
+
+> SECRET_KEY = kew234-(389jkiLO
+
+- Para gerar a chave basta executar o seguinte comando:
+
+```bash
+py filopedia/manage.py shell
+```
+
+Depois de executar o comando shell dentro do django, rode o comando abaixo:
+
+```bash
+from django.core.management.utils import get_random_secret_key
+
+print(get_random_secret_key())
+```
+
+Esse comando irá gerar uma nova secret_key que deve ser adicionada ao arquivo .env criado
+
+---
+
+#### Sobre o Banco de dados:
+
+O banco de dados que está configurado no arquivo `settings.py` na pasta `setup/` é o POSTGRESQL.
+Como a forma mais comum que estamos usando para desenvolver o projeto é através do Docker, o HOST está definido como `database`, que é o nome do serviço do banco de dados no arquivo `compose.yaml`.
+
+Se você estiver rodando o projeto localmente e já possui o POSTGRESQL instalado, basta mudar o HOST para o endereço que o POSTGRESQL está rodando na sua máquina.
+
+Em todos os casos, aconselhamos fortemente o uso do Docker para evitar trabalho na hora de rodar o projeto.
 
 # Dúvidas? Ideias?
 

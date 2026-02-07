@@ -190,3 +190,18 @@ body {
     width: 100%;
     filter: sepia(30%); /* Toque vintage na foto */
 }
+.card-img-standard {
+    /* Aumentamos de 180px para 350px para dar destaque */
+    height: 350px;      
+    object-fit: cover;  
+    width: 100%;
+    /* Opcional: adiciona um leve contraste para separar do fundo */
+    border-bottom: 1px solid #D7CCC8; 
+}
+
+/* Garante que o card se ajuste ao novo tamanho da imagem */
+.custom-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}

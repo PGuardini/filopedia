@@ -1,6 +1,6 @@
 from django.shortcuts import render
 import json
-from cards.data_retriever import get_all_data, get_philosopher
+from cards.data_retriever import get_all_data, get_philosopher, get_card_diario
 #from filopedia.cards.data_retriever import get_all_data
 from cards.constants import DATA_PATH
 
@@ -16,8 +16,11 @@ def index(request):
         with open(f"{DATA_PATH}{arquivo}", "r", encoding="utf-8") as f:
            cards.append(json.load(f))
 
+    destaque = get_card_diario()
+    
     context = {
-            "cards": cards
+            "cards": cards,
+            "destaque": destaque
         }
 
     return render(request, "cards/index.html", context=context)

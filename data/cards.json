@@ -1,0 +1,974 @@
+[
+    {
+        "nome": "abraao_ibne_esdras",
+        "exibido": null
+    },
+    {
+        "nome": "adolf_reinach",
+        "exibido": null
+    },
+    {
+        "nome": "alain_leroy_locke",
+        "exibido": null
+    },
+    {
+        "nome": "alan_turing",
+        "exibido": null
+    },
+    {
+        "nome": "albert_camus",
+        "exibido": null
+    },
+    {
+        "nome": "alexander_von_humboldt",
+        "exibido": null
+    },
+    {
+        "nome": "alexius_meinong",
+        "exibido": null
+    },
+    {
+        "nome": "alfred_north_whitehead",
+        "exibido": null
+    },
+    {
+        "nome": "alfred_tarski",
+        "exibido": null
+    },
+    {
+        "nome": "alonzo_church",
+        "exibido": null
+    },
+    {
+        "nome": "antoine_arnauld",
+        "exibido": null
+    },
+    {
+        "nome": "antonio_gramsci",
+        "exibido": null
+    },
+    {
+        "nome": "antonio_rosmini",
+        "exibido": null
+    },
+    {
+        "nome": "arthur_prior",
+        "exibido": null
+    },
+    {
+        "nome": "arthur_schopenhauer",
+        "exibido": null
+    },
+    {
+        "nome": "auguste_comte",
+        "exibido": null
+    },
+    {
+        "nome": "august_wilhelm_schlegel",
+        "exibido": null
+    },
+    {
+        "nome": "ayn_rand",
+        "exibido": null
+    },
+    {
+        "nome": "a_j_ayer",
+        "exibido": null
+    },
+    {
+        "nome": "baruch_espinoza",
+        "exibido": null
+    },
+    {
+        "nome": "benjamin_peirce",
+        "exibido": null
+    },
+    {
+        "nome": "bernardino_telesio",
+        "exibido": null
+    },
+    {
+        "nome": "bernard_bolzano",
+        "exibido": null
+    },
+    {
+        "nome": "bernard_mandeville",
+        "exibido": null
+    },
+    {
+        "nome": "bernard_williams",
+        "exibido": null
+    },
+    {
+        "nome": "bertrand_russell",
+        "exibido": null
+    },
+    {
+        "nome": "blaise_pascal",
+        "exibido": null
+    },
+    {
+        "nome": "boecio",
+        "exibido": null
+    },
+    {
+        "nome": "bruno_bauer",
+        "exibido": null
+    },
+    {
+        "nome": "carl_gustav_hempel",
+        "exibido": null
+    },
+    {
+        "nome": "carl_schmitt",
+        "exibido": null
+    },
+    {
+        "nome": "carl_stumpf",
+        "exibido": null
+    },
+    {
+        "nome": "catharine_macaulay",
+        "exibido": null
+    },
+    {
+        "nome": "catharine_trotter_cockburn",
+        "exibido": null
+    },
+    {
+        "nome": "charles_hartshorne",
+        "exibido": null
+    },
+    {
+        "nome": "charles_sanders_peirce",
+        "exibido": null
+    },
+    {
+        "nome": "christian_von_ehrenfels",
+        "exibido": null
+    },
+    {
+        "nome": "christian_wolff",
+        "exibido": null
+    },
+    {
+        "nome": "clarence_irving_lewis",
+        "exibido": null
+    },
+    {
+        "nome": "david_hartley",
+        "exibido": null
+    },
+    {
+        "nome": "david_hume",
+        "exibido": null
+    },
+    {
+        "nome": "david_lewis",
+        "exibido": null
+    },
+    {
+        "nome": "denis_diderot",
+        "exibido": null
+    },
+    {
+        "nome": "donald_davidson",
+        "exibido": null
+    },
+    {
+        "nome": "edith_stein",
+        "exibido": null
+    },
+    {
+        "nome": "edmund_burke",
+        "exibido": null
+    },
+    {
+        "nome": "edmund_husserl",
+        "exibido": null
+    },
+    {
+        "nome": "elizabeth_anscombe",
+        "exibido": null
+    },
+    {
+        "nome": "emmanuel_levinas",
+        "exibido": null
+    },
+    {
+        "nome": "erasmo_de_roterdao",
+        "exibido": null
+    },
+    {
+        "nome": "ernst_bloch",
+        "exibido": null
+    },
+    {
+        "nome": "ernst_cassirer",
+        "exibido": null
+    },
+    {
+        "nome": "ernst_mach",
+        "exibido": null
+    },
+    {
+        "nome": "ernst_mally",
+        "exibido": null
+    },
+    {
+        "nome": "etienne_bonnot_de_condillac",
+        "exibido": null
+    },
+    {
+        "nome": "facradim_arrazi",
+        "exibido": null
+    },
+    {
+        "nome": "francesco_patrizi",
+        "exibido": null
+    },
+    {
+        "nome": "francisco_sanches",
+        "exibido": null
+    },
+    {
+        "nome": "francis_bacon",
+        "exibido": null
+    },
+    {
+        "nome": "francis_herbert_bradley",
+        "exibido": null
+    },
+    {
+        "nome": "francis_hutcheson",
+        "exibido": null
+    },
+    {
+        "nome": "frank_ramsey",
+        "exibido": null
+    },
+    {
+        "nome": "frantz_fanon",
+        "exibido": "2026-02-07"
+    },
+    {
+        "nome": "franz_brentano",
+        "exibido": null
+    },
+    {
+        "nome": "franz_rosenzweig",
+        "exibido": null
+    },
+    {
+        "nome": "frederick_douglass",
+        "exibido": null
+    },
+    {
+        "nome": "friedrich_albert_lange",
+        "exibido": null
+    },
+    {
+        "nome": "friedrich_hayek",
+        "exibido": null
+    },
+    {
+        "nome": "friedrich_heinrich_jacobi",
+        "exibido": null
+    },
+    {
+        "nome": "friedrich_nietzsche",
+        "exibido": null
+    },
+    {
+        "nome": "friedrich_schiller",
+        "exibido": null
+    },
+    {
+        "nome": "friedrich_schlegel",
+        "exibido": null
+    },
+    {
+        "nome": "friedrich_schleiermacher",
+        "exibido": null
+    },
+    {
+        "nome": "friedrich_wilhelm_joseph_von_schelling",
+        "exibido": null
+    },
+    {
+        "nome": "george_berkeley",
+        "exibido": null
+    },
+    {
+        "nome": "george_boole",
+        "exibido": null
+    },
+    {
+        "nome": "george_edward_moore",
+        "exibido": null
+    },
+    {
+        "nome": "george_herbert_mead",
+        "exibido": null
+    },
+    {
+        "nome": "george_santayana",
+        "exibido": null
+    },
+    {
+        "nome": "georg_wilhelm_friedrich_hegel",
+        "exibido": null
+    },
+    {
+        "nome": "geraud_de_cordemoy",
+        "exibido": null
+    },
+    {
+        "nome": "gershom_scholem",
+        "exibido": null
+    },
+    {
+        "nome": "giambattista_vico",
+        "exibido": null
+    },
+    {
+        "nome": "gilbert_ryle",
+        "exibido": null
+    },
+    {
+        "nome": "gilles_deleuze",
+        "exibido": null
+    },
+    {
+        "nome": "giordano_bruno",
+        "exibido": null
+    },
+    {
+        "nome": "giovanni_battista_della_porta",
+        "exibido": null
+    },
+    {
+        "nome": "giovanni_pico_della_mirandola",
+        "exibido": null
+    },
+    {
+        "nome": "gottfried_leibniz",
+        "exibido": null
+    },
+    {
+        "nome": "gottlob_frege",
+        "exibido": null
+    },
+    {
+        "nome": "guilherme_de_ockham",
+        "exibido": null
+    },
+    {
+        "nome": "gustav_theodor_fechner",
+        "exibido": null
+    },
+    {
+        "nome": "hannah_arendt",
+        "exibido": null
+    },
+    {
+        "nome": "hans_georg_gadamer",
+        "exibido": null
+    },
+    {
+        "nome": "hans_reichenbach",
+        "exibido": null
+    },
+    {
+        "nome": "hans_vaihinger",
+        "exibido": null
+    },
+    {
+        "nome": "heinrich_cornelius_agrippa_von_nettesheim",
+        "exibido": null
+    },
+    {
+        "nome": "heinrich_rickert",
+        "exibido": null
+    },
+    {
+        "nome": "heinrich_scholz",
+        "exibido": null
+    },
+    {
+        "nome": "henri_bergson",
+        "exibido": null
+    },
+    {
+        "nome": "henry_david_thoreau",
+        "exibido": null
+    },
+    {
+        "nome": "henry_more",
+        "exibido": null
+    },
+    {
+        "nome": "henry_sidgwick",
+        "exibido": null
+    },
+    {
+        "nome": "herbert_feigl",
+        "exibido": null
+    },
+    {
+        "nome": "herbert_marcuse",
+        "exibido": null
+    },
+    {
+        "nome": "herbert_spencer",
+        "exibido": null
+    },
+    {
+        "nome": "hermann_cohen",
+        "exibido": null
+    },
+    {
+        "nome": "hermann_von_helmholtz",
+        "exibido": null
+    },
+    {
+        "nome": "hermann_weyl",
+        "exibido": null
+    },
+    {
+        "nome": "hugo_grocio",
+        "exibido": null
+    },
+    {
+        "nome": "immanuel_kant",
+        "exibido": null
+    },
+    {
+        "nome": "imre_lakatos",
+        "exibido": null
+    },
+    {
+        "nome": "iris_murdoch",
+        "exibido": null
+    },
+    {
+        "nome": "isaac_newton",
+        "exibido": null
+    },
+    {
+        "nome": "isaiah_berlin",
+        "exibido": null
+    },
+    {
+        "nome": "jacques_derrida",
+        "exibido": null
+    },
+    {
+        "nome": "jacques_lacan",
+        "exibido": null
+    },
+    {
+        "nome": "jacques_maritain",
+        "exibido": null
+    },
+    {
+        "nome": "james_mill",
+        "exibido": null
+    },
+    {
+        "nome": "james_ward",
+        "exibido": null
+    },
+    {
+        "nome": "jane_addams",
+        "exibido": null
+    },
+    {
+        "nome": "jean_baudrillard",
+        "exibido": null
+    },
+    {
+        "nome": "jean_bodin",
+        "exibido": null
+    },
+    {
+        "nome": "jean_jacques_rousseau",
+        "exibido": null
+    },
+    {
+        "nome": "jean_paul_sartre",
+        "exibido": null
+    },
+    {
+        "nome": "jeremy_bentham",
+        "exibido": null
+    },
+    {
+        "nome": "joao_duns_escoto",
+        "exibido": null
+    },
+    {
+        "nome": "joao_luis_vives",
+        "exibido": null
+    },
+    {
+        "nome": "johannes_kepler",
+        "exibido": null
+    },
+    {
+        "nome": "johann_friedrich_herbart",
+        "exibido": null
+    },
+    {
+        "nome": "johann_georg_hamann",
+        "exibido": null
+    },
+    {
+        "nome": "johann_gottfried_von_herder",
+        "exibido": null
+    },
+    {
+        "nome": "johann_gottlieb_fichte",
+        "exibido": null
+    },
+    {
+        "nome": "john_anderson",
+        "exibido": null
+    },
+    {
+        "nome": "john_dewey",
+        "exibido": null
+    },
+    {
+        "nome": "john_langshaw_austin",
+        "exibido": null
+    },
+    {
+        "nome": "john_locke",
+        "exibido": null
+    },
+    {
+        "nome": "john_rawls",
+        "exibido": null
+    },
+    {
+        "nome": "john_stuart_mill",
+        "exibido": null
+    },
+    {
+        "nome": "john_wycliffe",
+        "exibido": null
+    },
+    {
+        "nome": "jonathan_edwards",
+        "exibido": null
+    },
+    {
+        "nome": "jose_albo",
+        "exibido": null
+    },
+    {
+        "nome": "jose_ortega_y_gasset",
+        "exibido": null
+    },
+    {
+        "nome": "josiah_royce",
+        "exibido": null
+    },
+    {
+        "nome": "jurgen_habermas",
+        "exibido": null
+    },
+    {
+        "nome": "justo_lipsio",
+        "exibido": null
+    },
+    {
+        "nome": "karl_jaspers",
+        "exibido": null
+    },
+    {
+        "nome": "karl_leonhard_reinhold",
+        "exibido": null
+    },
+    {
+        "nome": "karl_marx",
+        "exibido": null
+    },
+    {
+        "nome": "karl_popper",
+        "exibido": null
+    },
+    {
+        "nome": "kazimierz_twardowski",
+        "exibido": null
+    },
+    {
+        "nome": "leo_strauss",
+        "exibido": null
+    },
+    {
+        "nome": "lorenzo_valla",
+        "exibido": null
+    },
+    {
+        "nome": "louis_althusser",
+        "exibido": null
+    },
+    {
+        "nome": "ludwig_feuerbach",
+        "exibido": null
+    },
+    {
+        "nome": "ludwig_wittgenstein",
+        "exibido": null
+    },
+    {
+        "nome": "ludwik_fleck",
+        "exibido": null
+    },
+    {
+        "nome": "luitzen_egbertus_jan_brouwer",
+        "exibido": null
+    },
+    {
+        "nome": "margaret_fuller",
+        "exibido": null
+    },
+    {
+        "nome": "maria_montessori",
+        "exibido": null
+    },
+    {
+        "nome": "marin_mersenne",
+        "exibido": null
+    },
+    {
+        "nome": "marsilio_ficino",
+        "exibido": null
+    },
+    {
+        "nome": "martin_buber",
+        "exibido": null
+    },
+    {
+        "nome": "martin_heidegger",
+        "exibido": null
+    },
+    {
+        "nome": "martin_luther",
+        "exibido": null
+    },
+    {
+        "nome": "mary_astell",
+        "exibido": null
+    },
+    {
+        "nome": "mary_wollstonecraft",
+        "exibido": null
+    },
+    {
+        "nome": "max_horkheimer",
+        "exibido": null
+    },
+    {
+        "nome": "max_scheler",
+        "exibido": null
+    },
+    {
+        "nome": "max_stirner",
+        "exibido": null
+    },
+    {
+        "nome": "max_weber",
+        "exibido": null
+    },
+    {
+        "nome": "michael_oakeshott",
+        "exibido": null
+    },
+    {
+        "nome": "michel_de_montaigne",
+        "exibido": null
+    },
+    {
+        "nome": "michel_foucault",
+        "exibido": null
+    },
+    {
+        "nome": "michel_henry",
+        "exibido": null
+    },
+    {
+        "nome": "moises_mendelssohn",
+        "exibido": null
+    },
+    {
+        "nome": "montesquieu",
+        "exibido": null
+    },
+    {
+        "nome": "moritz_schlick",
+        "exibido": null
+    },
+    {
+        "nome": "nelson_goodman",
+        "exibido": null
+    },
+    {
+        "nome": "nicolai_hartmann",
+        "exibido": null
+    },
+    {
+        "nome": "nicolas_malebranche",
+        "exibido": null
+    },
+    {
+        "nome": "nicolau_copernico",
+        "exibido": null
+    },
+    {
+        "nome": "nicolau_de_oresme",
+        "exibido": null
+    },
+    {
+        "nome": "nicolau_maquiavel",
+        "exibido": null
+    },
+    {
+        "nome": "otto_neurath",
+        "exibido": null
+    },
+    {
+        "nome": "paul_feyerabend",
+        "exibido": null
+    },
+    {
+        "nome": "paul_grice",
+        "exibido": null
+    },
+    {
+        "nome": "paul_ricur",
+        "exibido": null
+    },
+    {
+        "nome": "peter_frederick_strawson",
+        "exibido": null
+    },
+    {
+        "nome": "philippa_foot",
+        "exibido": null
+    },
+    {
+        "nome": "pierre_bayle",
+        "exibido": null
+    },
+    {
+        "nome": "pierre_de_la_ramee",
+        "exibido": null
+    },
+    {
+        "nome": "pierre_duhem",
+        "exibido": null
+    },
+    {
+        "nome": "pierre_gassendi",
+        "exibido": null
+    },
+    {
+        "nome": "pietro_pomponazzi",
+        "exibido": null
+    },
+    {
+        "nome": "raimundo_lulio",
+        "exibido": null
+    },
+    {
+        "nome": "ralph_waldo_emerson",
+        "exibido": null
+    },
+    {
+        "nome": "rene_descartes",
+        "exibido": null
+    },
+    {
+        "nome": "richard_kilvington",
+        "exibido": null
+    },
+    {
+        "nome": "richard_mervyn_hare",
+        "exibido": null
+    },
+    {
+        "nome": "richard_price",
+        "exibido": null
+    },
+    {
+        "nome": "richard_rorty",
+        "exibido": null
+    },
+    {
+        "nome": "roberto_grosseteste",
+        "exibido": null
+    },
+    {
+        "nome": "robert_boyle",
+        "exibido": null
+    },
+    {
+        "nome": "roderick_chisholm",
+        "exibido": null
+    },
+    {
+        "nome": "roger_bacon",
+        "exibido": null
+    },
+    {
+        "nome": "roman_ingarden",
+        "exibido": null
+    },
+    {
+        "nome": "rosa_luxemburgo",
+        "exibido": null
+    },
+    {
+        "nome": "rudolf_carnap",
+        "exibido": null
+    },
+    {
+        "nome": "ruth_barcan_marcus",
+        "exibido": null
+    },
+    {
+        "nome": "r_g_collingwood",
+        "exibido": null
+    },
+    {
+        "nome": "salomao_ibne_gabirol",
+        "exibido": null
+    },
+    {
+        "nome": "salomon_maimon",
+        "exibido": null
+    },
+    {
+        "nome": "samuel_alexander",
+        "exibido": null
+    },
+    {
+        "nome": "samuel_clarke",
+        "exibido": null
+    },
+    {
+        "nome": "sidney_hook",
+        "exibido": null
+    },
+    {
+        "nome": "simone_de_beauvoir",
+        "exibido": null
+    },
+    {
+        "nome": "simone_weil",
+        "exibido": null
+    },
+    {
+        "nome": "sren_kierkegaard",
+        "exibido": null
+    },
+    {
+        "nome": "theodor_w_adorno",
+        "exibido": null
+    },
+    {
+        "nome": "thomas_hobbes",
+        "exibido": null
+    },
+    {
+        "nome": "thomas_jefferson",
+        "exibido": null
+    },
+    {
+        "nome": "thomas_kuhn",
+        "exibido": null
+    },
+    {
+        "nome": "thomas_more",
+        "exibido": null
+    },
+    {
+        "nome": "thomas_paine",
+        "exibido": null
+    },
+    {
+        "nome": "thomas_reid",
+        "exibido": null
+    },
+    {
+        "nome": "tomas_de_aquino",
+        "exibido": null
+    },
+    {
+        "nome": "tommaso_campanella",
+        "exibido": null
+    },
+    {
+        "nome": "t_h_green",
+        "exibido": null
+    },
+    {
+        "nome": "walter_benjamin",
+        "exibido": null
+    },
+    {
+        "nome": "wilfrid_sellars",
+        "exibido": null
+    },
+    {
+        "nome": "wilhelm_dilthey",
+        "exibido": null
+    },
+    {
+        "nome": "wilhelm_von_humboldt",
+        "exibido": null
+    },
+    {
+        "nome": "wilhelm_windelband",
+        "exibido": null
+    },
+    {
+        "nome": "wilhelm_wundt",
+        "exibido": null
+    },
+    {
+        "nome": "willard_van_orman_quine",
+        "exibido": null
+    },
+    {
+        "nome": "william_godwin",
+        "exibido": null
+    },
+    {
+        "nome": "william_james",
+        "exibido": null
+    },
+    {
+        "nome": "william_stanley_jevons",
+        "exibido": null
+    },
+    {
+        "nome": "william_whewell",
+        "exibido": null
+    },
+    {
+        "nome": "w_e_b_du_bois",
+        "exibido": null
+    },
+    {
+        "nome": "yehudah_halevi",
+        "exibido": null
+    },
+    {
+        "nome": "yeshayahu_leibowitz",
+        "exibido": null
+    }
+]
