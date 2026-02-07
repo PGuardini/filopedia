@@ -11,8 +11,9 @@ Este projeto tem como objetivo a divulgação de conteúdo filosófico por meio 
   - [Sobre o projeto](#sobre-o-projeto)
   - [Estrutura do projeto](#estrutura-do-projeto)
 - [Instalação do projeto](#instalação-do-projeto)
-  - [Instalando o projeto localmente](#instalando-o-projeto-localmente)
+  - [Instalando o projeto localmente usando PIP](#instalando-o-projeto-localmente-usando-pip)
     - [Executando comandos na venv](#executando-comandos-na-venv)
+  - [Instalando o projeto localmente usando UV](#instalando-o-projeto-localmente-usando-uv)
   - [Instalando com Docker](#instalando-com-docker)
     - [Executando comandos no container](#executando-comandos-no-container)
 - [Utilização](#utilização)
@@ -20,6 +21,8 @@ Este projeto tem como objetivo a divulgação de conteúdo filosófico por meio 
     - [Aranha mapeadora](#aranha-mapeadora)
     - [Aranha Wikipedia](#aranha-wikipedia)
   - [Rodando a aplicação Django:](#rodando-a-aplicação-django)
+    - [Observações importantes sobre o projeto Django](#observações-importantes-sobre-o-projeto-django)
+      - [Sobre o ambiente Django:](#sobre-o-ambiente-django)
 - [Dúvidas? Ideias?](#dúvidas-ideias)
   - [Contatos](#contatos)
 - [Contribuição](#contribuição)
@@ -50,17 +53,19 @@ Após serem salvos na camada de persistência, a aplicação Django os consome p
 
 # Instalação do projeto
 
-## Instalando o projeto localmente
+## Instalando o projeto localmente usando PIP
 
 A instalação recomendada é usando um [ambiente virtual (venv)](venv).
 
 Na raiz do projeto, execute no terminal os seguintes comandos:
 
-    python3 -m venv .venv
+```bash
+>>> python3 -m venv .venv
     
-    source .venv/bin/activate (ou: .venv/scripts/activate)
+>>> source .venv/bin/activate (ou: .venv/scripts/activate)
 
-    pip3 install -r requirements.txt
+>>> pip3 install -r requirements.txt
+```
 
 Após executar `pip3 install`, serão instaladas todas as dependências do projeto, o que permitirá com que ele rode normalmente.
 
@@ -69,25 +74,51 @@ Após executar `pip3 install`, serão instaladas todas as dependências do proje
 
 ---
 
+## Instalando o projeto localmente usando UV
+
+Caso você já possua o UV instalado, pode executar os comandos abaixo para realizar a instalação local do projeto.
+
+```bash
+>>> uv sync
+```
+
+ou, caso se sinta mais confortável com o requirements.txt:
+
+  Cria o ambiente virtual
+
+```bash
+>>> uv venv
+```
+
+  Faz a instalação dos pacotes usados no projeto
+
+```bash
+>>> uv pip install -r requirements.txt
+```
+---
+
 ## Instalando com Docker
 
 Caso deseje instalar o projeto utilizando o [Docker](docker), você pode usar o arquivo `compose.yaml` para iniciar os containers com todas as dependências necessárias.
 
 No terminal da raiz do projeto, execute o comando:
 
-      docker compose up --build -d
-
+```bash
+>>> docker compose up --build -d
+```
 O container já estará rodando a aplicação Django na porta local 8000. Para acessá-la, basta acessar no seu navegador <http://localhost:8000>
 
 Para parar os containeres:
-
-      docker compose down
+```bash
+>>> docker compose down
+```
 
 ### Executando comandos no container
 Para executar comandos dentro do container, use `docker exec` para abrir um terminal dentro do container
-    
-    docker exec -it filopedia bash
 
+```bash    
+>>>docker exec -it filopedia bash
+```
 
 # Utilização
 
@@ -104,8 +135,9 @@ Para fazer a extração dos links que serão utilizados pela aranha que extrai o
 
 Dentro da pasta `crawler/`, execute o comando:
     
-    scrapy crawl mapeadora
-
+```bash
+>>> scrapy crawl mapeadora
+```
 Esse comando irá abrir a aranha mapeadora que irá popular o arquivo `urls.json` dentro da pasta `crawler/scrapers/`. Esse arquivo possui todos os links atualizados da lista de temas de filosofia listados no site da [Stanford Encyclopedia of Philosophy](SEP-contents), que utilizamos como base.
 
 ---
@@ -115,8 +147,10 @@ Esse comando irá abrir a aranha mapeadora que irá popular o arquivo `urls.json
 Após ter rodado a aranha mapeadora e populado o arquivo `urls.json` com a lista atualizada de conteúdos de filosofia, você pode começar a fazer a extração dos dados da wikipedia sobre os temas de filosofia listados.
 
 Na pasta `crawler/`, execute no terminal o comando:
-    `scrapy crawl wikipedia`
 
+```bash
+>>> scrapy crawl wikipedia
+```
   A aranha wikipedia irá iniciar a extração e começará a criar arquivos .json na pasta `data/`, consolidando os dados extraídos na camada de persistência, que serão consumidos mais tarde pela aplicação Django.
 
 > Obs.: Para saber sobre aranhas do scrapy, veja este [link](spiders-scrapy)
@@ -129,9 +163,55 @@ Se você estiver rodando o projeto localmente, será necessário rodar o servido
 
 Na pasta `filopedia/`, execute o seguinte comando no terminal da venv:
 
-    py manage.py runserver (ou apenas manage.py runserver)
+```bash
+>>> py manage.py runserver (ou apenas manage.py runserver)
+```
+
+Caso esteja usando UV (não precisa ativar a venv):
+
+```bash
+>>> uv py run manage.py runserver
+```
+
+Obs.: se estiver executando na raiz do projeto, o caminho se torna `filopedia/manage.py`
 
 Agora é para o servidor Django estar rodando em <http://localhost:8000> no seu navegador.
+
+### Observações importantes sobre o projeto Django
+
+#### Sobre o ambiente Django:
+
+- É necessário criar um arquivo chamado .env dentro da pasta `filopedia/`.
+- Dentro do arquivo deve ser criada uma variável chamada SECRET_KEY, como mostrado abaixo:
+
+> SECRET_KEY = kew234-(389jkiLO
+
+- Para gerar a chave basta executar o seguinte comando:
+
+```bash
+py filopedia/manage.py shell
+```
+
+Depois de executar o comando shell dentro do django, rode o comando abaixo:
+
+```bash
+from django.core.management.utils import get_random_secret_key
+
+print(get_random_secret_key())
+```
+
+Esse comando irá gerar uma nova secret_key que deve ser adicionada ao arquivo .env criado
+
+---
+
+#### Sobre o Banco de dados:
+
+O banco de dados que está configurado no arquivo `settings.py` na pasta `setup/` é o POSTGRESQL.
+Como a forma mais comum que estamos usando para desenvolver o projeto é através do Docker, o HOST está definido como `database`, que é o nome do serviço do banco de dados no arquivo `compose.yaml`.
+
+Se você estiver rodando o projeto localmente e já possui o POSTGRESQL instalado, basta mudar o HOST para o endereço que o POSTGRESQL está rodando na sua máquina.
+
+Em todos os casos, aconselhamos fortemente o uso do Docker para evitar trabalho na hora de rodar o projeto.
 
 # Dúvidas? Ideias?
 
