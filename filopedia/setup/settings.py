@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', 'localhost', 'now.sh']
 
@@ -78,6 +78,17 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        #'ENGINE': 'django.db.backends.postgresql',
+        #'NAME': 'filopedia',
+        #'USER': 'postgres',
+        #'PASSWORD': '!F1l0_pedy4',
+        
+        # o Host precisa ser o nome do serviço que está na compose file e não
+        # o localhost ou o ip, senão o django não encontra: isso acontece pelo
+        # isolamento da rede que o docker faz.
+        
+        #'HOST':'database',
+        #'PORT':'5432'
     }
 }
 
