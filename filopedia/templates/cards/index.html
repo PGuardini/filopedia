@@ -7,8 +7,11 @@
             <div class="row g-0 align-items-center">
                 
                 <div class="col-md-6">
-                    <img src="{{ destaque.imagem }}" 
-                        class="featured-img" alt="Filósofo em Destaque">
+                {% if destaque.imagem is None %}
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Image-not-found.png?20210521171500" class="card-img-top card-img-standard">
+                {% else %}
+                    <img src="{{ destaque.imagem }}" class="featured-img" alt="Filósofo em Destaque">
+                {% endif %}
                 </div>
 
                 <div class="col-md-6">
