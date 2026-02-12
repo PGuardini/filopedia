@@ -7,6 +7,7 @@ pip install -r requirements.txt
 
 # Roda as Migrations
 echo "--- Rodando Migrations ---"
+python3 manage.py makemigrations --noinput
 python3 manage.py migrate --noinput
 
 # Coleta os arquivos estáticos (WhiteNoise)
