@@ -13,11 +13,12 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 import os
 from pathlib import Path
 
+import dj_database_url
 # dotenv e urllib para importação das configurações de ambiente
-from dotenv import load_dotenv
-from urllib.parse import urlparse, parse_qsl
+#from dotenv import load_dotenv
+#from urllib.parse import urlparse, parse_qsl
 
-load_dotenv()
+#load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -81,6 +82,16 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+
+DATABASES = {
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL'),
+        conn_max_age=600,
+        ssl_require=True
+    )
+}
+
+"""
 tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
 
 DATABASES = {
@@ -95,7 +106,7 @@ DATABASES = {
     }
 }
 
-"""
+
 DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
