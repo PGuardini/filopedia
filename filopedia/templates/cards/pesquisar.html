@@ -2,36 +2,6 @@
 {% load static %}
 {% block content %}
 
-    <div class="container py-5">
-        <div class="card featured-card shadow-sm">
-            <div class="row g-0 align-items-center">
-                
-                <div class="col-md-6">
-                {% if destaque.imagem is None %}
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Image-not-found.png?20210521171500" class="card-img-top card-img-standard">
-                {% else %}
-                    <img src="{{ destaque.imagem }}" class="featured-img" alt="Filósofo em Destaque">
-                {% endif %}
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card-body p-5">
-                        <h5 class="featured-label">Destaque da dia</h5>
-                        <h2 class="featured-title">{{ destaque.titulo.0 }}</h2>
-                        <p class="card-text lead text-muted" style="font-family: 'Georgia', serif;">
-                             {{ destaque.conteudo.0|truncatechars:200 }}
-                        </p>
-                        <div class="mt-4">
-                            <a href="{% url 'card' destaque.view %}" class="btn btn-filosofia px-4 py-2">Iniciar Leitura Profunda</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <hr class="mb-5 mx-auto" style="width: 50px; border-top: 3px solid #4A5D4E;">
-    </div>
-
 
     <div class="container-fluid overflow-hidden">
         <div class="row row-cols-1 row-cols-md-4 g-5">
@@ -64,5 +34,4 @@
         {% endif %}
         </div>
     </div>
-
 {% endblock %}
