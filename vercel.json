@@ -1,5 +1,7 @@
 {
   "version": 2,
+  "buildCommand": "bash build_files.sh",
+  "installCommand": "pip install -r requirements.txt",
   "builds": [
     {
       "src": "filopedia/setup/wsgi.py",
