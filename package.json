@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "build": "bash build_files.sh"
+  }
+}
