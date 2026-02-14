@@ -17,12 +17,14 @@ Este projeto tem como objetivo a divulgação de conteúdo filosófico por meio 
   - [Instalando com Docker](#instalando-com-docker)
     - [Executando comandos no container](#executando-comandos-no-container)
 - [Utilização](#utilização)
+  - [Django Admin](#django-admin)
   - [Rodando o crawler:](#rodando-o-crawler)
     - [Aranha mapeadora](#aranha-mapeadora)
     - [Aranha Wikipedia](#aranha-wikipedia)
   - [Rodando a aplicação Django:](#rodando-a-aplicação-django)
     - [Observações importantes sobre o projeto Django](#observações-importantes-sobre-o-projeto-django)
       - [Sobre o ambiente Django:](#sobre-o-ambiente-django)
+      - [Sobre o Banco de dados:](#sobre-o-banco-de-dados)
 - [Dúvidas? Ideias?](#dúvidas-ideias)
   - [Contatos](#contatos)
 - [Contribuição](#contribuição)
@@ -127,6 +129,16 @@ Agora que o projeto está instalado, temos algumas formas de utilizá-lo.
 Como foi dito [anteriormente](#estrutura-do-projeto), o projeto é dividido em três grandes partes: crawler, camada de persistência e aplicação Django. A camada de persistência não possui lógica para interagir, portanto ela não possui comandos a serem executados.
 
 O crawler, que tem como função extrair os dados que serão utilizados, possui alguns comandos para ser utilizado.
+
+## Django Admin
+
+O Django admin já possui um super usuário configurado, para utilizá-lo, use as credenciais abaixo:
+
+Usuário: filopedia
+
+Senha: 123123
+
+Obs.: O banco de dados já será populado automaticamente na composição do docker.
 
 ## Rodando o crawler:
 

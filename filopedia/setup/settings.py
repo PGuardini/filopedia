@@ -88,8 +88,8 @@ DATABASES = {
         # o Host precisa ser o nome do serviço que está na compose file e não
         # o localhost ou o ip, senão o django não encontra: isso acontece pelo
         # isolamento da rede que o docker faz.
-        #'HOST':'database',
-        'HOST':'localhost',
+        'HOST':'database',
+        #'HOST':'localhost',
         'PORT':'5432'
     }
 }

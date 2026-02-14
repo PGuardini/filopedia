@@ -8,46 +8,44 @@
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
 services:
+  database:
+    container_name: postgres
+    image: postgres
+    restart: on-failure
+    volumes:
+      - ./.pgdata:/var/lib/postgresql
+      - ./insert.sql:/docker-entrypoint-initdb.d/setup.sql
+    env_file: 
+      - ./config/.env
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
   django:
     container_name: filopedia
     build:
       context: .
       dockerfile: Dockerfile
+    command: |
+      sh -c "
+      python filopedia/manage.py migrate &&
+      python filopedia/manage.py shell -c \"
+      from django.contrib.auth import get_user_model
+      User = get_user_model()
+      if not User.objects.filter(username='filopedia').exists():
+          User.objects.create_superuser('filopedia', '', '123123')
+      \" &&
+      python filopedia/manage.py runserver 0.0.0.0:8000
+      "
     volumes:
       - ./data:/app/data
     ports:
       - 8000:8000
-
-# The commented out section below is an example of how to define a PostgreSQL
-# database that your application can use. `depends_on` tells Docker Compose to
-# start the database before your application. The `db-data` volume persists the
-# database data between container restarts. The `db-password` secret is used
-# to set the database password. You must create `db/password.txt` and add
-# a password of your choosing to it before running `docker compose up`.
-#     depends_on:
-#       db:
-#         condition: service_healthy
-#   db:
-#     image: postgres
-#     restart: always
-#     user: postgres
-#     secrets:
-#       - db-password
-#     volumes:
-#       - db-data:/var/lib/postgresql/data
-#     environment:
-#       - POSTGRES_DB=example
-#       - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-#     expose:
-#       - 5432
-#     healthcheck:
-#       test: [ "CMD", "pg_isready" ]
-#       interval: 10s
-#       timeout: 5s
-#       retries: 5
-# volumes:
-#   db-data:
-# secrets:
-#   db-password:
-#     file: db/password.txt
-
+    depends_on:
+      database:
+        condition: service_healthy
+    env_file:
+      - ./config/.env

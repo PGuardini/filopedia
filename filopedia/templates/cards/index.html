@@ -39,7 +39,7 @@
             {% for card in cards %}
                 <div class="col">
                     <div class="card custom-card mb-3 p-1">
-                        {% if card.imagem is None %}
+                        {% if not card.imagem or card.imagem == 'None' %}
                             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Image-not-found.png?20210521171500" class="card-img-top card-img-standard">
                         {% else %}
                             <img src="{{ card.imagem }}" class="card-img-top card-img-standard">
