@@ -2,36 +2,59 @@
 {% load static %}
 {% block content %}
 
-    <div class="container py-5">
-        <div class="card featured-card shadow-sm">
-            <div class="row g-0 align-items-center">
-                
-                <div class="col-md-6">
-                {% if destaque.imagem is None %}
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Image-not-found.png?20210521171500" class="card-img-top card-img-standard">
-                {% else %}
-                    <img src="{{ destaque.imagem }}" class="featured-img" alt="Filósofo em Destaque">
-                {% endif %}
-                </div>
 
-                <div class="col-md-6">
-                    <div class="card-body p-5">
-                        <h5 class="featured-label">Destaque da dia</h5>
-                        <h2 class="featured-title">{{ destaque.titulo.0 }}</h2>
-                        <p class="card-text lead text-muted" style="font-family: 'Georgia', serif;">
-                             {{ destaque.conteudo.0|truncatechars:200 }}
-                        </p>
-                        <div class="mt-4">
-                            <a href="{% url 'card' destaque.view %}" class="btn btn-filosofia px-4 py-2">Iniciar Leitura Profunda</a>
+
+    <div id="carouselFilosofos" class="carousel slide shadow-lg rounded" data-bs-ride="false" data-bs-wrap="false">        
+        <div class="carousel-inner">
+            {% for destaque in destaques %}
+                <div class="carousel-item {% if forloop.last %} active {% endif %}">
+                    <div class="row g-0 align-items-center" style="min-height: 400px;">
+                        <div class="col-md-5">
+
+                        {% if destaque.id_filosofo.imagem is None %}
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Image-not-found.png?20210521171500" class="img-fluid w-100" 
+                                style="height: 400px; object-fit: cover;" alt="{{ destaque.id_filosofo.nome }}">
+                        {% else %}
+                            <img src="{{ destaque.id_filosofo.imagem }}" class="img-fluid w-100" 
+                                style="height: 400px; object-fit: cover;" alt="{{ destaque.id_filosofo.nome }}">
+                        {% endif %}
+                        </div>
+                        <div class="col-md-7 p-5">
+                            {% if forloop.last %}
+                                <span class="badge bg-warning text-dark mb-2">DESTAQUE DE HOJE</span>
+                            {% else %}
+                                <span class="badge bg-warning text-dark mb-2">Destaque de {{ destaque.data_exibicao }}</span>
+                            {% endif %}
+                            <h2 class="display-5 fw-bold">{{ destaque.id_filosofo.nome }}</h2>
+                            <p class="lead">{{ destaque.id_filosofo.biografia|truncatewords:100 }}</p>
+                            <div class="mt-4">
+                                <a href="{% url 'card' destaque.id_filosofo.slug %}" class="btn btn-filosofia px-4 py-2">Ler artigo</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-            </div>
+            {% endfor %}
         </div>
-        <hr class="mb-5 mx-auto" style="width: 50px; border-top: 3px solid #4A5D4E;">
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselFilosofos" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselFilosofos" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
     </div>
 
+    <br>
+
+    <div class="d-flex align-items-center my-4">
+        <div class="flex-grow-1 border-bottom border-sepia"></div>
+        <span class="px-3 philosophy-text text-uppercase fw-bold" style="color: #4A5D4E;">
+            GALERIA DE FILÓSOFOS
+        </span>
+        <div class="flex-grow-1 border-bottom border-sepia"></div>
+    </div>
 
     <div class="container-fluid overflow-hidden">
         <div class="row row-cols-1 row-cols-md-4 g-5">

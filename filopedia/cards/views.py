@@ -1,29 +1,29 @@
 from django.shortcuts import render, get_object_or_404
-import json
 from cards.data_retriever import get_all_data, get_philosopher, get_card_diario
 #from filopedia.cards.data_retriever import get_all_data
 from cards.constants import DATA_PATH
-from cards.models import Filosofo
+from cards.models import Filosofo, Exibicao
+from datetime import date
 
 def index(request):
     """
-    Retorna todos os filósofos em um dicionário chamado Cards
+    Retorna todos os filósofos e filósofos em destaque
     """
-    # arquivos = get_all_data()
-
-    # cards = []
-
-    # for arquivo in arquivos:
-    #     with open(f"{DATA_PATH}{arquivo}", "r", encoding="utf-8") as f:
-    #        cards.append(json.load(f))
-
+    
     cards = Filosofo.objects.order_by("nome").filter(publicado=True)
 
-    destaque = get_card_diario()
-    
+    exibido_hoje = Exibicao.objects.filter(data_exibicao=date.today()).first()
+
+    if not exibido_hoje:
+        filosofo_destaque = Filosofo.objects.filter(exibicao__isnull=True).order_by('?').first()
+        registro = Exibicao(id_filosofo=filosofo_destaque)
+        registro.save()
+
+    destaques = Exibicao.objects.select_related('id_filosofo').order_by('data_exibicao')
+
     context = {
             "cards": cards,
-            "destaque": destaque
+            "destaques": destaques
         }
 
     return render(request, "cards/index.html", context=context)
