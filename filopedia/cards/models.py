@@ -11,6 +11,7 @@ class Filosofo(models.Model):
 
     def __str__(self):
         return f'{self.nome}'
+    
 class Exibicao(models.Model):
     id_filosofo = models.ForeignKey(Filosofo, on_delete=models.CASCADE)
     data_exibicao = models.DateField(default=timezone.now(), null=False, blank=False)

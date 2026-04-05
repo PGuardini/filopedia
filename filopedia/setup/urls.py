@@ -16,16 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
-
+from rest_framework import routers
+from cards import views
 
 #
 # NECESSÁRIO: ISOLAR ROTA ADMIN/
 #
 
+# Routers
+router = routers.DefaultRouter()
+router.register(r'filosofos', views.FilosofoView, 'filosofo')
+router.register(r'exibicoes', views.ExibicaoView, 'exibicao')
+
 urlpatterns = [
     # atribui à rota "admin/" o site de admin
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
+
 
     # puxa as urls do app cards e posiciona elas na rota index do projeto
     path('', include('cards.urls')),
