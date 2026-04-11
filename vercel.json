@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "filopedia/setup/wsgi.py",
+      "src": "backend_api/setup/wsgi.py",
       "use": "@vercel/python",
       "config": { "runtime": "python3.12" }
     }
@@ -10,16 +10,16 @@
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "filopedia/staticfiles/$1",
+      "dest": "backend_api/staticfiles/$1",
       "continue": true
     },
     {
       "src": "/(.*)",
-      "dest": "filopedia/setup/wsgi.py"
+      "dest": "backend_api/setup/wsgi.py"
     }
   ],
   "env": {
-    "PYTHONPATH": "filopedia",
+    "PYTHONPATH": "backend_api",
     "DJANGO_SETTINGS_MODULE": "setup.settings"
   }
 }

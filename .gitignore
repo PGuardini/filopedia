@@ -7,3 +7,19 @@
 __pycache__
 data/404*
 .pgdata
+
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch

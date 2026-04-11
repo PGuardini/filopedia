@@ -32,3 +32,47 @@
 **/values.dev.yaml
 LICENSE
 README.md
+
+# =========================================
+# Dependencies and build output
+# =========================================
+node_modules/
+dist/
+out/
+.tmp/
+.cache/
+ 
+# =========================================
+# Vite, Webpack, and React-specific artifacts
+# =========================================
+.vite/
+.vitepress/
+.eslintcache
+.npm/
+coverage/
+jest/
+cypress/
+cypress/screenshots/
+cypress/videos/
+reports/
+ 
+# =========================================
+# TypeScript build artifacts
+# =========================================
+*.tsbuildinfo
+ 
+# =========================================
+# Debug and lockfiles
+# =========================================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+ 
+# =========================================
+# Docker-related files
+# =========================================
+Dockerfile
+.dockerignore
+docker-compose.yml
+docker-compose.override.yml

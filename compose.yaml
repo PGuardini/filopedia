@@ -1,51 +1,72 @@
-# Comments are provided throughout this file to help you get started.
-# If you need more help, visit the Docker Compose reference guide at
-# https://docs.docker.com/go/compose-spec-reference/
 
-# Here the instructions define your application as a service called "server".
-# This service is built from the Dockerfile in the current directory.
-# You can add other services your application may depend on here, such as a
-# database or a cache. For examples, see the Awesome Compose repository:
-# https://github.com/docker/awesome-compose
+# Definição dos serviços
 services:
+
+  # Configurações do Banco de Dados
   database:
-    container_name: postgres
-    image: postgres
+    container_name: Postgres
+    image: postgres:alpine
     restart: on-failure
     volumes:
       - ./.pgdata:/var/lib/postgresql
-      - ./insert.sql:/docker-entrypoint-initdb.d/setup.sql
     env_file: 
-      - ./config/.env
+      - ./config_db/.env
     ports:
       - 5432:5432
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
-      interval: 10s
+      interval: 5s
       timeout: 5s
       retries: 10
+
+
+
+
+
+  # Configuração do Backend
   django:
-    container_name: filopedia
+    container_name: Django_REST
     build:
-      context: .
+      context: ./backend_api
       dockerfile: Dockerfile
     command: |
       sh -c "
-      python filopedia/manage.py migrate &&
-      python filopedia/manage.py shell -c \"
+      python manage.py migrate &&
+      python manage.py shell -c \"
       from django.contrib.auth import get_user_model
       User = get_user_model()
       if not User.objects.filter(username='filopedia').exists():
           User.objects.create_superuser('filopedia', '', '123123')
       \" &&
-      python filopedia/manage.py runserver 0.0.0.0:8000
+      python manage.py runserver 0.0.0.0:8000
       "
     volumes:
+      - ./backend_api:/app/
+      #- ./crawler:/app/crawler
       - ./data:/app/data
     ports:
       - 8000:8000
+    stdin_open: true
+    tty: true
     depends_on:
       database:
         condition: service_healthy
     env_file:
-      - ./config/.env
+      - ./config_db/.env
+
+
+
+  # Configuração do Frontend
+  react:
+    container_name: React
+    build: 
+      context: ./frontend
+    volumes: 
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    stdin_open: true
+    tty: true
+    depends_on: 
+      - django

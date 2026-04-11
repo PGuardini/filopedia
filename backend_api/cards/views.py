@@ -30,6 +30,8 @@ class ExibicaoView(viewsets.ReadOnlyModelViewSet):
 
 
 
+# LOGICA DO FRONTEND:
+
 def index(request):
     """
     Retorna todos os filósofos e filósofos em destaque
@@ -67,7 +69,7 @@ def card(request, filosofo):
     return render(request, "cards/card.html", context=context)
 
 def sobre(request):
-    return render(request, "filopedia/sobre.html")
+    return render(request, "backend_api/sobre.html")
 
 
 def pesquisar(request):
