@@ -1,0 +1,9 @@
+/* Container do Grid */
+.philosopher-grid {
+  display: grid;
+  /* Cria colunas responsivas: mínimo 280px, máximo 1fr */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}

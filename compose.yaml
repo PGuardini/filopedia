@@ -62,7 +62,9 @@ services:
     build: 
       context: ./frontend
     volumes: 
-      - ./frontend:/app
+      - type: bind
+        source: ./frontend
+        target: /app
       - /app/node_modules
     ports:
       - "5173:5173"
