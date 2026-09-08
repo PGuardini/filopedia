@@ -19,7 +19,7 @@ const CardFilosofo = ({ id, nome, biografia, imagem, slug}: Filosofo) => {
                 <h2 className="name">{nome}</h2>
                 <p className="">{biografia.substring(0, 250)}</p>
                 <p className="meta">
-                    <a href={`/${slug}`}>Ler mais</a>
+                    <a href={`/card/${slug}`}>Ler mais</a>
                 </p>
             </div>
         </article>

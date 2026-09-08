@@ -17,13 +17,6 @@ class FilosofoView(viewsets.ModelViewSet):
 class ExibicaoView(viewsets.ReadOnlyModelViewSet):
     serializer_class = ExibicaoSerializer
 
-    exibido_hoje = Exibicao.objects.filter(data_exibicao=date.today()).first()
-        
-    if not exibido_hoje:
-        novo_filosofo_em_destaque = Filosofo.objects.filter(exibicao__isnull=True).order_by('?').first()
-        nova_exibicao = Exibicao(id_filosofo=novo_filosofo_em_destaque)
-        nova_exibicao.save()
-
     # Todos filósofos que já foram/estão sendo exibidos ordenados pela mais recente exibicao
     queryset = Exibicao.objects.select_related('id_filosofo').order_by('data_exibicao')
 
